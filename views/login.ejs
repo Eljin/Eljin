@@ -1,0 +1,28 @@
+<%- include header  %>
+<div class="wrap clearfix">
+
+<div class="login">
+    <form method="post" action="/login" protect_from_csrf="true" accept-charset="UTF-8">
+        <!--<input value="c8f87caca6916b8f2bfc2adcd271ae7e222e64a42cdf7e53f34fcdf31aaafb18" name="authenticity_token" type="hidden">-->
+        <p>
+            <label for="account_email">Email地址</label>
+            <input id="account_email" name="account[email]" type="text">
+        </p>
+        <p>
+            <label for="account_password">输入密码</label>
+            <input id="account_password" name="account[password]" type="password">
+        </p>
+        <p class="remember_me">
+            <input checked="checked" name="remember_me" value="1" type="checkbox">
+            <label for="remember_me">两一周内自动登录</label>
+        </p>
+        <p>
+            <input class="login" value="" type="submit">
+            <a class="reg_btn" href="/reg"></a>
+        </p>
+    </form>
+</div><!--login -->
+
+</div><!-- content -->
+
+<%- include footer  %>

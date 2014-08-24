@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="/stylesheets/default/document.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/default/content.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="header">
+    <div class="wrap">
+        <div class="user_img"><img src="/images/website.png" width="80" height="80" alt="website icon"></div>
+        <div class="blog_title"><%=APP_CONFIG['site_title']+(user?" by "+user.name:'')%></div>
+        <div class="write">
+            <% if(!user){ %>
+            <a href="/login">登录</a>
+            <% }else{ %>
+            <a>写文章</a>
+            <a href="/logout">退出</a>
+            <% }%>
+        </div>
+        <div class="blog_motto">site_motto</div>
+    </div>
+</div><!-- header -->
+
+<div class="nav">
+    <div class="wrap clearfix">
+        <div class="search fr">
+            <form action="#search" id="cse-search-box" method="get">
+                <input type="hidden" name="cx" value="APP_CONFIG['google_cse']" />
+                <input type="hidden" name="cof" value="FORID:10" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input id="search-box" name="q" type="text" placeholder="Search" value="">
+                <button id="search-button"></button>
+            </form>
+        </div>
+        <ul>
+            <li><a href="/" nav = 'home' >首页</a></li>
+            <li><a href="/#blog"  nav = 'blog' >博客</a></li>
+            <li><a href="/#note" nav = 'note' >笔记</a></li>
+            <li><a href="/#tag"  nav = 'tag' >分类</a></li>
+            <li><a href="/#news"  nav ='weibo' >新闻动态</a></li>
+            <li><a href="/#about" nav = 'me' >关于</a></li>
+        </ul>
+    </div>
+</div><!-- nav -->

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+
+        .divCenter{
+            /*margin: 0px auto;*/
+            display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="">
+    <label for="someInput"> Your Name: </label>
+    <input type="text" id="someInput" name="someInput" oninvalid="out(this)"  pattern="[1-9]" placeholder="Douglas Quaid"  required autofocus><br/>
+    <label for="someInput"> Your pwd: </label>
+    <input type="text" name="someInput" placeholder="Douglas Quaid" ><br/>
+    <button type="submit">Go</button>
+</form>
+
+<span>123</span>
+<div id="isV" style="border:1px solid green;visibility:visible;display:block;width:520px;margin:auto; position:relative;top:10px" > this is Visibility1 </div>
+
+<div id="isD" style="border:1px solid red;display:block" value="qqqq"> this is Display </div>
+<div style="border:2px solid blue;position:relative;display:block;top:20px"><span style="display:inline;">dddd</span>
+    <div id="isVc" style="border:1px solid green;display:inline"> this is Visibility <span>55</span><span>55</span></div>
+</div>
+
+<div  class="divCenter"> div center !!</div>
+
+
+</body>
+<script>
+    function out(i){
+        var v = i.validity;
+        console.log(v);
+        if(true === v.valueMissing){
+            i.setCustomValidity("请填写些字段");
+        }else{
+            if(true === v.patternMismatch){
+                i.setCustomValidity("请输入4位数字");
+            }else{
+                i.setCustomValidity("");
+            }
+        }
+    }
+
+console.log(document.getElementById('isV'));
+console.log(document.getElementById('isD').innerHTML);
+//console.log(encodeURIComponent("{}"));
+//console.log({e:1}==true);
+
+function SuperType() {
+    this.property = true;
+}
+
+SuperType.prototype.getSuperValue = function() {
+    return this.property;
+};
+
+function SubType() {
+    this.subproperty = false;
+}
+
+//继承了SuperType
+SubType.prototype = new SuperType();
+
+SubType.prototype.getSubValue = function() {
+    return this.subproperty;
+};
+
+var instanc = new SubType();
+
+
+    console.log(instanc.getSubValue());
+//true
+//检查原型链对象是否存在于指定实例中
+console.log(SuperType.prototype.isPrototypeOf(instanc));
+//判断给出的属性是否属于这个对象
+    console.log(SuperType.hasOwnProperty('getSuperValue'));
+
+
+    var arr = [5,3,1,7,4,9];
+
+    function asc(x,y)
+    {
+        if (x > y)
+            return -1;
+        if (x < y)
+            return 1;
+    }
+
+    console.log(arr.sort(asc));
+
+
+    var time = new Date();
+//    console.log(Date.);
+console.log([1,2,3,4,5].indexOf(1));
+
+
+        </script>
+</html>

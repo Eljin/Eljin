@@ -1,0 +1,1 @@
+E:\node\mongodb\bin\mongod.exe --dbpath E:\node\mongodb\data\blog

@@ -1,0 +1,36 @@
+<%- include header  %>
+<div class="wrap clearfix">
+
+<div class="login reg">
+    <form method="post" action="/reg" protect_from_csrf="true" accept-charset="UTF-8">
+        <!--<input value="c8f87caca6916b8f2bfc2adcd271ae7e222e64a42cdf7e53f34fcdf31aaafb18" name="authenticity_token" type="hidden">-->
+        <p>
+            <label for="account_name">用户名</label>
+            <input id="account_name" name="account[name]" type="text">
+        </p>
+        <p>
+            <label for="account_password">密码</label>
+            <input id="account_password"  name="account[password]" type="password">
+        </p>
+        <p>
+            <label for="account_password_repeat">确认密码</label>
+            <input id="account_password_repeat" name="account[password_repeat]" type="password">
+
+        </p>
+        <p>
+            <label for="account_email">Email地址</label>
+            <input id="account_email" name="account[email]" type="text">
+        </p>
+        <p>
+            <input class="submit" type="submit" value="" >
+        </p>
+        <% if(error){ %>
+        <div  id="form-error-info"><%=error%></div>
+        <% } %>
+    </form>
+
+</div><!--register -->
+
+</div><!-- content -->
+
+<%- include footer  %>
